@@ -71,7 +71,6 @@ if(require.main == module) {
 	.option('-u, --url <check_url>', 'Path to url')
 	.parse(process.argv);
     if(program.url){
-	var htmlfile  = "file.html";
 	rest.get(program.url).on('complete', function(result){
 	    $ = cheerio.load(result);
 	    var checks = loadChecks(program.checks).sort();
